@@ -1,0 +1,66 @@
+name: 'Publish resources to Preset workspace'
+
+env:
+  WORKSPACE: ${{ secrets.WORKSPACE }}
+
+  DBT_PROFILES_DIR: /home/runner/work/dbt-integration-blog-post/dbt-integration-blog-post
+  DBT_GOOGLE_BIGQUERY_KEYFILE_DEV: /home/runner/dbt-service-account.json
+  DBT_GOOGLE_PROJECT_DEV: ${{ secrets.DBT_GOOGLE_PROJECT_DEV }}
+  DBT_GOOGLE_BIGQUERY_DATASET_DEV: ${{ secrets.DBT_GOOGLE_BIGQUERY_DATASET_DEV }}
+
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+
+jobs:
+  publish:
+    name: 'Publish resources'
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+    - name: 'Checkout CLI'
+      uses: actions/checkout@v3
+      with:
+        repository: preset-io/backend-sdk
+        path: preset-cli
+
+    - name: 'Install CLI'
+      run: |
+        cd preset-cli
+        pip install .
+        cd ..
+
+    - name: 'Install dbt'
+      run: |
+        pip install dbt-core dbt-bigquery
+
+    - name: 'Checkout'
+      uses: actions/checkout@v3
+
+    - name: 'Authenticate using service account'
+      run: 'echo "$KEYFILE" > $DBT_GOOGLE_BIGQUERY_KEYFILE_DEV'
+      env:
+        KEYFILE: ${{ secrets.DBT_GOOGLE_BIGQUERY_KEYFILE_DEV }}
+
+    - name: 'Compile manifest'
+      run: |
+        cd jaffle_shop
+        dbt deps
+        dbt compile
+        cd ..
+        
+    - name: 'Publish resources'
+      env:
+        PRESET_API_TOKEN: ${{ secrets.PRESET_API_TOKEN }}
+        PRESET_API_SECRET: ${{ secrets.PRESET_API_SECRET }}
+      run: |
+        preset-cli --workspaces=${WORKSPACE} superset sync dbt \
+          ./jaffle_shop/target/manifest.json \
+          --profiles=profiles.yml \
+          --project=jaffle_shop --target=dev --import-db

@@ -1,0 +1,66 @@
+version: 2
+
+sources:
+  - name: jaffle_shop
+    database: dbt-tutorial
+    schema: jaffle_shop
+    tables:
+      - name: customers
+      - name: orders
+
+models:
+  - name: customers
+    description: One record per customer
+    meta:
+      superset:
+        cache_timeout: 600
+    columns:
+      - name: customer_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+      - name: first_order_date
+        description: NULL when a customer has not yet placed an order.
+
+  - name: stg_customers
+    description: This model cleans up customer data
+    columns:
+      - name: customer_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+
+  - name: stg_orders
+    description: This model cleans up order data
+    columns:
+      - name: order_id
+        description: Primary key
+        tests:
+          - unique
+          - not_null
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['placed', 'shipped', 'completed', 'return_pending', 'returned']
+
+metrics:
+  - name: new_customers
+    label: New Customers
+    model: ref('customers')
+    description: "The number of paid customers using the product"
+
+    type: count
+    sql: customer_id
+
+    timestamp: first_order_date
+    time_grains: [day, week, month]
+
+    dimensions:
+      - first_name
+
+    filters:
+      - field: number_of_orders
+        operator: '>'
+        value: '0'
