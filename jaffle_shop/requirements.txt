@@ -1,0 +1,3 @@
+git+https://github.com/preset-io/backend-sdk.git
+dbt-core
+

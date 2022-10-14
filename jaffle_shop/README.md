@@ -13,3 +13,4 @@ Try running the following commands:
 - Join the [chat](https://community.getdbt.com/) on Slack for live discussions and support
 - Find [dbt events](https://events.getdbt.com) near you
 - Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+- Dashboard - https://a9322c86.us2a.app.preset.io/superset/dashboard/8/?native_filters_key=WQxtOJe0Z2AEWwj6-alHtc5w18oiki_STrTYnr_NbZQOuBBDe4wa3BCX9amG5cX4
