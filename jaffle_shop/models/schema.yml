@@ -88,14 +88,14 @@ metrics:
     description: "The 14 day rolling count of orders on the product"
 
     type: count_distinct
-    sql: order_id 
+    sql: order_id
 
     timestamp: order_date
     time_grains: [day, week, month, quarter, year]
 
     dimensions:
       - status
-    
+
     filters:
       - field: amount
         operator: '>='

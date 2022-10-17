@@ -16,7 +16,7 @@ extra:
   depends_on: ref('customers')
   certification:
     details: This table is produced by dbt
-uuid: a92a996f-5ab7-4717-9288-bf20f7d7dd01
+uuid: 11ce01f2-9153-4f03-b1d6-699e64ecdb0f
 metrics:
 - metric_name: count
   verbose_name: COUNT(*)
@@ -112,4 +112,4 @@ columns:
   python_date_format: null
   extra: null
 version: 1.0.0
-database_uuid: 4932ffdf-5854-47b0-8a4e-cb52da337bc3
+database_uuid: e900cd78-0cf5-4ae2-b908-1c6684b2dfff

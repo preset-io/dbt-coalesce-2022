@@ -16,8 +16,18 @@ extra:
   depends_on: ref('orders')
   certification:
     details: This table is produced by dbt
-uuid: 0b80c6b3-ca9c-4952-998e-853a777c2fd4
+uuid: 67098f60-24c1-492c-9508-16c5b84c7970
 metrics:
+- metric_name: rolling_new_orders
+  verbose_name: New Customers
+  metric_type: count_distinct
+  expression: COUNT(DISTINCT CASE WHEN is_paying is true AND amount >= 1 AND customer_id
+    != 1 AND order_date >= '2020-01-01' THEN order_id END)
+  description: The 14 day rolling count of orders on the product
+  d3format: null
+  extra:
+    team: Finance
+  warning_text: null
 - metric_name: count
   verbose_name: COUNT(*)
   metric_type: count
@@ -154,4 +164,4 @@ columns:
   python_date_format: null
   extra: null
 version: 1.0.0
-database_uuid: 4932ffdf-5854-47b0-8a4e-cb52da337bc3
+database_uuid: e900cd78-0cf5-4ae2-b908-1c6684b2dfff
