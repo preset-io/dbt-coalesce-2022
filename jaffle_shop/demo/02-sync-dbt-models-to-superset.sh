@@ -1,7 +1,6 @@
 # Setting up env variables
 source ./vars.sh
 
-
 # Syncing dbt models as Superset datasets
 # AND
 # brining back associated charts and dashboards as dbt exposures

@@ -1,4 +1,4 @@
-dashboard_title: Jaffle Shop
+dashboard_title: Jaffle Shop {{ " (staging)" if env.get("SUPERSET_ENV") == "staging" else "" }}
 description: null
 css: ''
 slug: null
