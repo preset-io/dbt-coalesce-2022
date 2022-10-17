@@ -1,4 +1,4 @@
-dashboard_title: Jaffle Shop Demo
+dashboard_title: Jaffle Shop {{ " (staging)" if env.get("SUPERSET_ENV") == "staging" else "" }}
 description: null
 css: ''
 slug: null
@@ -6,7 +6,6 @@ uuid: b894b528-ea0e-414e-bdfc-efdbae7752de
 position:
   CHART-RUigQQM-78:
     children: []
-    id: CHART-RUigQQM-78
     meta:
       chartId: 79
       height: 50
