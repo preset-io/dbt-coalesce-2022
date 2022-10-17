@@ -1,0 +1,38 @@
+slice_name: Order Status
+viz_type: area
+params:
+  datasource: 392__table
+  viz_type: area
+  granularity_sqla: order_date
+  time_grain_sqla: P1D
+  time_range: No filter
+  metrics:
+  - count
+  adhoc_filters: []
+  groupby:
+  - status
+  order_desc: true
+  row_limit: 10000
+  show_brush: auto
+  show_legend: true
+  line_interpolation: linear
+  stacked_style: stack
+  color_scheme: supersetColors
+  rich_tooltip: true
+  bottom_margin: auto
+  x_ticks_layout: auto
+  x_axis_format: smart_date
+  y_axis_format: SMART_NUMBER
+  y_axis_bounds:
+  - null
+  - null
+  rolling_type: None
+  comparison_type: values
+  annotation_layers: []
+  extra_form_data: {}
+  dashboards:
+  - 8
+cache_timeout: null
+uuid: 77319a1b-f1a1-421f-b16f-e5d8c17146f0
+version: 1.0.0
+dataset_uuid: 0b80c6b3-ca9c-4952-998e-853a777c2fd4

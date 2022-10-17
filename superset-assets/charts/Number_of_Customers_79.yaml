@@ -1,0 +1,20 @@
+slice_name: Number of Customers
+viz_type: big_number_total
+params:
+  datasource: 391__table
+  viz_type: big_number_total
+  granularity_sqla: first_order
+  time_range: No filter
+  metric: count
+  adhoc_filters: []
+  header_font_size: 0.4
+  subheader_font_size: 0.15
+  y_axis_format: SMART_NUMBER
+  time_format: smart_date
+  extra_form_data: {}
+  dashboards:
+  - 8
+cache_timeout: null
+uuid: f76053ab-f6d1-4f9c-bb36-196b7be527a3
+version: 1.0.0
+dataset_uuid: a92a996f-5ab7-4717-9288-bf20f7d7dd01

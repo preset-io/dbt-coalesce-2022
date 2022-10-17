@@ -1,0 +1,115 @@
+table_name: customers
+main_dttm_col: first_order
+description: This table has basic information about a customer, as well as some derived
+  facts based on a customer's orders
+default_endpoint: null
+offset: 0
+cache_timeout: null
+schema: jaffle_shop_demo
+sql: null
+params: null
+template_params: null
+filter_select_enabled: true
+fetch_values_predicate: null
+extra:
+  unique_id: model.jaffle_shop.customers
+  depends_on: ref('customers')
+  certification:
+    details: This table is produced by dbt
+uuid: a92a996f-5ab7-4717-9288-bf20f7d7dd01
+metrics:
+- metric_name: count
+  verbose_name: COUNT(*)
+  metric_type: count
+  expression: COUNT(*)
+  description: null
+  d3format: null
+  extra: null
+  warning_text: null
+columns:
+- column_name: number_of_orders
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: INT64
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: Count of the number of orders a customer has placed
+  python_date_format: null
+  extra: null
+- column_name: most_recent_order
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: DATE
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: Date (UTC) of a customer's most recent order
+  python_date_format: null
+  extra: null
+- column_name: customer_id
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: INT64
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: This is a unique identifier for a customer
+  python_date_format: null
+  extra: null
+- column_name: first_order
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: DATE
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: Date (UTC) of a customer's first order
+  python_date_format: null
+  extra: null
+- column_name: last_name
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: Customer's last name. PII.
+  python_date_format: null
+  extra: null
+- column_name: first_name
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: Customer's first name. PII.
+  python_date_format: null
+  extra: null
+- column_name: customer_lifetime_value
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: FLOAT64
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+version: 1.0.0
+database_uuid: 4932ffdf-5854-47b0-8a4e-cb52da337bc3
