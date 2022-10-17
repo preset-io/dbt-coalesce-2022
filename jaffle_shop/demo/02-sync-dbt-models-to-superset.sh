@@ -7,7 +7,7 @@ source ./vars.sh
 preset-cli --workspaces=$TARGET_WORKSPACES \
  superset sync dbt-core ../target/manifest.json \
  --project=jaffle_shop \
- --exposures=./models/exposures.yaml \
+ --exposures=../models/exposures.yaml \
  --import-db \
  --external-url-prefix=http://localhost:8080/
 
