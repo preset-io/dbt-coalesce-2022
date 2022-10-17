@@ -1,0 +1,142 @@
+slice_name: Order Payments
+viz_type: echarts_area
+params:
+  adhoc_filters: []
+  annotation_layers: []
+  color_scheme: supersetColors
+  comparison_type: values
+  dashboards:
+  - 9
+  datasource: 22__table
+  extra_form_data: {}
+  forecastInterval: 0.8
+  forecastPeriods: 10
+  granularity_sqla: order_date
+  groupby: []
+  legendOrientation: top
+  legendType: scroll
+  markerSize: 6
+  metrics:
+  - aggregate: SUM
+    column:
+      advanced_data_type: null
+      certification_details: null
+      certified_by: null
+      column_name: credit_card_amount
+      description: Amount of the order (AUD) paid for by credit card
+      expression: ''
+      filterable: true
+      groupby: true
+      id: 762
+      is_certified: false
+      is_dttm: false
+      python_date_format: null
+      type: FLOAT64
+      type_generic: 0
+      verbose_name: null
+      warning_markdown: null
+    expressionType: SIMPLE
+    hasCustomLabel: true
+    isNew: false
+    label: Credit Card
+    optionName: metric_i6h5du7fmq_qq60ntaghzn
+    sqlExpression: null
+  - aggregate: SUM
+    column:
+      advanced_data_type: null
+      certification_details: null
+      certified_by: null
+      column_name: coupon_amount
+      description: Amount of the order (AUD) paid for by coupon
+      expression: ''
+      filterable: true
+      groupby: true
+      id: 763
+      is_certified: false
+      is_dttm: false
+      python_date_format: null
+      type: FLOAT64
+      type_generic: 0
+      verbose_name: null
+      warning_markdown: null
+    expressionType: SIMPLE
+    hasCustomLabel: true
+    isNew: false
+    label: Coupon
+    optionName: metric_km1kt03t3t_nuafy1ub3m
+    sqlExpression: null
+  - aggregate: SUM
+    column:
+      advanced_data_type: null
+      certification_details: null
+      certified_by: null
+      column_name: bank_transfer_amount
+      description: Amount of the order (AUD) paid for by bank transfer
+      expression: ''
+      filterable: true
+      groupby: true
+      id: 764
+      is_certified: false
+      is_dttm: false
+      python_date_format: null
+      type: FLOAT64
+      type_generic: 0
+      verbose_name: null
+      warning_markdown: null
+    expressionType: SIMPLE
+    hasCustomLabel: true
+    isNew: false
+    label: Bank Transfer
+    optionName: metric_64i1xvz0v03_fmi9byaqvqh
+    sqlExpression: null
+  - aggregate: SUM
+    column:
+      advanced_data_type: null
+      certification_details: null
+      certified_by: null
+      column_name: gift_card_amount
+      description: Amount of the order (AUD) paid for by gift card
+      expression: ''
+      filterable: true
+      groupby: true
+      id: 765
+      is_certified: false
+      is_dttm: false
+      python_date_format: null
+      type: FLOAT64
+      type_generic: 0
+      verbose_name: null
+      warning_markdown: null
+    expressionType: SIMPLE
+    hasCustomLabel: true
+    isNew: false
+    label: Gift Card
+    optionName: metric_s3nsqxxc0jk_rcet7ky7ha
+    sqlExpression: null
+  only_total: true
+  opacity: 0.2
+  order_desc: true
+  rich_tooltip: true
+  rolling_type: cumsum
+  row_limit: 10000
+  seriesType: line
+  show_empty_columns: true
+  show_legend: true
+  slice_id: 81
+  time_grain_sqla: P1D
+  time_range: No filter
+  tooltipTimeFormat: smart_date
+  truncate_metric: true
+  viz_type: echarts_area
+  x_axis_time_format: smart_date
+  x_axis_title_margin: 15
+  y_axis_bounds:
+  - null
+  - null
+  y_axis_format: SMART_NUMBER
+  y_axis_title_margin: 15
+  y_axis_title_position: Left
+cache_timeout: null
+uuid: 76eae297-c7ef-460c-9da0-67a33ae5bacd
+version: 1.0.0
+dataset_uuid: 67098f60-24c1-492c-9508-16c5b84c7970

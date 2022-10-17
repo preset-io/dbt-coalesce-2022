@@ -12,10 +12,10 @@ template_params: null
 filter_select_enabled: true
 fetch_values_predicate: null
 extra:
-  unique_id: model.jaffle_shop.customers
-  depends_on: ref('customers')
   certification:
     details: This table is produced by dbt
+  depends_on: ref('customers')
+  unique_id: model.jaffle_shop.customers
 uuid: 11ce01f2-9153-4f03-b1d6-699e64ecdb0f
 metrics:
 - metric_name: count

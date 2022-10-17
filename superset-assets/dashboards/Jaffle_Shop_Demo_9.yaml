@@ -1,0 +1,157 @@
+dashboard_title: Jaffle Shop Demo
+description: null
+css: ''
+slug: null
+uuid: b894b528-ea0e-414e-bdfc-efdbae7752de
+position:
+  CHART-RUigQQM-78:
+    children: []
+    id: CHART-RUigQQM-78
+    meta:
+      chartId: 79
+      height: 50
+      sliceName: Number of Customers
+      uuid: 89f3a634-b0a4-4762-9352-ed9d9bbde6c6
+      width: 4
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-I561FQabY2
+    type: CHART
+  CHART-explore-82-1:
+    children: []
+    id: CHART-explore-82-1
+    meta:
+      chartId: 82
+      height: 50
+      sliceName: Order Status
+      uuid: 7257b759-7b16-43b7-9521-a7b38039177d
+      width: 8
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-I561FQabY2
+    type: CHART
+  CHART-explore-83-1:
+    children: []
+    id: CHART-explore-83-1
+    meta:
+      chartId: 83
+      height: 50
+      sliceName: Order Payments
+      uuid: 76eae297-c7ef-460c-9da0-67a33ae5bacd
+      width: 12
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-9Qffz2c9eM
+    type: CHART
+  DASHBOARD_VERSION_KEY: v2
+  GRID_ID:
+    children:
+    - ROW-I561FQabY2
+    - ROW-9Qffz2c9eM
+    id: GRID_ID
+    parents:
+    - ROOT_ID
+    type: GRID
+  HEADER_ID:
+    id: HEADER_ID
+    meta:
+      text: Jaffle Shop Demo
+    type: HEADER
+  ROOT_ID:
+    children:
+    - GRID_ID
+    id: ROOT_ID
+    type: ROOT
+  ROW-9Qffz2c9eM:
+    children:
+    - CHART-explore-83-1
+    id: ROW-9Qffz2c9eM
+    meta:
+      '0': ROOT_ID
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
+  ROW-I561FQabY2:
+    children:
+    - CHART-RUigQQM-78
+    - CHART-explore-82-1
+    id: ROW-I561FQabY2
+    meta:
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
+metadata:
+  chart_configuration:
+    '82':
+      crossFilters:
+        chartsInScope:
+        - 79
+        - 80
+        - 81
+        - 83
+        scope:
+          excluded:
+          - 82
+          rootPath:
+          - ROOT_ID
+      id: 82
+    '83':
+      crossFilters:
+        chartsInScope:
+        - 79
+        - 80
+        - 81
+        - 82
+        scope:
+          excluded:
+          - 83
+          rootPath:
+          - ROOT_ID
+      id: 83
+  color_scheme: ''
+  color_scheme_domain: []
+  default_filters: '{}'
+  expanded_slices: {}
+  label_colors: {}
+  native_filter_configuration:
+  - cascadeParentIds: []
+    chartsInScope:
+    - 82
+    - 83
+    controlValues:
+      defaultToFirstItem: false
+      enableEmptyFilter: false
+      inverseSelection: false
+      multiSelect: true
+      searchAllOptions: false
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    description: ''
+    filterType: filter_select
+    id: NATIVE_FILTER-KMS3PGz1W
+    name: Order Status
+    scope:
+      excluded:
+      - 79
+      rootPath:
+      - ROOT_ID
+    tabsInScope: []
+    targets:
+    - column:
+        name: status
+      datasetUuid: 67098f60-24c1-492c-9508-16c5b84c7970
+    type: NATIVE_FILTER
+  refresh_frequency: 0
+  shared_label_colors: {}
+  show_native_filters: true
+  timed_refresh_immune_slices: []
+version: 1.0.0

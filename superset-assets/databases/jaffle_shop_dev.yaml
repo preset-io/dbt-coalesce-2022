@@ -1,0 +1,15 @@
+database_name: jaffle_shop_dev
+sqlalchemy_uri: bigquery://preset-cloud-dev-dbt/?location=US&priority=INTERACTIVE
+cache_timeout: null
+expose_in_sqllab: true
+allow_run_async: false
+allow_ctas: false
+allow_cvas: false
+allow_file_upload: false
+extra:
+  engine_params: {}
+  metadata_cache_timeout: {}
+  metadata_params: {}
+  schemas_allowed_for_file_upload: []
+uuid: e900cd78-0cf5-4ae2-b908-1c6684b2dfff
+version: 1.0.0

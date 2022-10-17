@@ -12,10 +12,10 @@ template_params: null
 filter_select_enabled: true
 fetch_values_predicate: null
 extra:
-  unique_id: model.jaffle_shop.orders
-  depends_on: ref('orders')
   certification:
     details: This table is produced by dbt
+  depends_on: ref('orders')
+  unique_id: model.jaffle_shop.orders
 uuid: 67098f60-24c1-492c-9508-16c5b84c7970
 metrics:
 - metric_name: rolling_new_orders

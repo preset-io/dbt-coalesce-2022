@@ -3,10 +3,10 @@ viz_type: big_number_total
 params:
   adhoc_filters: []
   applied_time_extras: {}
-  datasource: 21__table
-  viz_type: big_number_total
-  metric: count
   dashboards: []
+  datasource: 21__table
+  metric: count
+  viz_type: big_number_total
 cache_timeout: null
 uuid: 89f3a634-b0a4-4762-9352-ed9d9bbde6c6
 version: 1.0.0
